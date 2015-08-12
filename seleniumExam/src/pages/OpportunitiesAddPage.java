@@ -7,16 +7,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.LinkedList;
 import java.util.Set;
 
 /**
  * Created by Pablo on 8/10/2015.
  */
-public class OpportunitiesAddPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class OpportunitiesAddPage extends MainContainer{
 
     @FindBy(id = "opp3")
     @CacheLookup
@@ -70,6 +67,12 @@ public class OpportunitiesAddPage {
 
         lookupIcon.click();
 
+        lookupSelector(oppAccount, selectAccountPage);
+        return new OpportunitiesDetailsPage();
+
+    }
+
+    private void lookupSelector(String oppAccount, SelectAccountPage selectAccountPage) {
         try {
 
             Set<String> setWindows = driver.getWindowHandles();
@@ -96,7 +99,5 @@ public class OpportunitiesAddPage {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new OpportunitiesDetailsPage();
-
     }
 }

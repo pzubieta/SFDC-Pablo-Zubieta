@@ -13,10 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by Pablo on 8/7/2015.
  */
-public class LoginPage {
-
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class LoginPage extends MainContainer{
 
     @FindBy(id = "username")
     @CacheLookup

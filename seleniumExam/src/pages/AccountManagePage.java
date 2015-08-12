@@ -16,10 +16,6 @@ public class AccountManagePage extends MainContainer{
 
     private WebElement accountLink;
 
-    @FindBy(name = "new")
-    @CacheLookup
-    private WebElement newAccountBtn;
-
     @FindBy(linkText = "Create New View")
     private WebElement createNewView;
 

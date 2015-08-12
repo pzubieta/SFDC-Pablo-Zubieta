@@ -7,16 +7,11 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by Pablo on 8/7/2015.
  */
 public class LeadManagePage extends MainContainer{
-
-    @FindBy(name = "new")
-    @CacheLookup
-    private WebElement newLeadBtn;
 
     @FindBy(linkText = "Create New View")
     private WebElement createNewView;
@@ -28,8 +23,8 @@ public class LeadManagePage extends MainContainer{
     }
 
     public LeadManagePage ClickNewLead(){
-        wait.until(ExpectedConditions.elementToBeClickable(newLeadBtn));
-        newLeadBtn.click();
+        wait.until(ExpectedConditions.elementToBeClickable(newElementBtn));
+        super.newElementBtn.click();
         return new LeadManagePage(driver);
     }
 

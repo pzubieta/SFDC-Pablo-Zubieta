@@ -12,12 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by Pablo on 8/7/2015.
  */
-public class NewLeadPage{
+public class NewLeadPage extends MainContainer{
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-
-    public NewLeadPage (WebDriver driver) {
+    public NewLeadPage () {
         driver = WebDriverManager.getInstance().getDriver();
         wait = WebDriverManager.getInstance().getWait();
         PageFactory.initElements(driver, this);
